@@ -1,5 +1,6 @@
 import React from 'react'
 import { products } from './Data'
+import { Link } from 'react-router-dom'
 export default function Categories() {
     let categories_list =[]
     products.map((p)=>{
@@ -10,13 +11,13 @@ export default function Categories() {
     })
     let ui = categories_list.map((c)=>{
         return( 
-            <a> 
-<div className='flex flex-col'>
-<p>{c.category_name}</p>
-<img src={c.img_src} className='h-50 aspect-square'/>
-View details
-</div>
-            </a>
+            <Link to={"/products/"+c.category_name}> 
+                <div className='flex flex-col'>
+                <p>{c.category_name}</p>
+                <img src={c.img_src} className='h-50 aspect-square'/>
+                View details
+                </div>
+            </Link>
        
     )})
     console.log(categories_list)

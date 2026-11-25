@@ -4,11 +4,20 @@ import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import './App.css'
 import Categories from './Categories'
+import { Route, Routes } from 'react-router-dom'
+import Products from './Products'
+import Menubar from './Menubar'
 
 function App() {
 return(<>
-<h1 className='bg-amber-600'>Ecommerce project</h1>
-<Categories></Categories>
+<Menubar></Menubar>
+
+<Routes>
+    <Route path="/" element={<Categories></Categories>}></Route>
+    <Route path="/products/:category_name" element={<Products></Products>}></Route>
+    
+</Routes>
+
 </>)  
 }
 
