@@ -1,6 +1,7 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
 import { products } from './Data'
+import { Link } from 'react-router-dom'
 export default function Products() {
  let category_name = useParams().category_name
  let filtered_products = products.filter((p)=>p.category == category_name)
@@ -10,6 +11,10 @@ return <div className='flex flex-col gap-1 w-60 text-center align-middle content
    <div> <span className='line-through'>{product.price} </span> <span className='text-red-500'>-{product.discountPercentage}%</span>
    </div>
     <span>{Math.round(product.price - (product.price * product.discountPercentage /100))}.00</span>
+     <Link to={`/product/${product.id}`}
+      className='bg-blue-600 text-white p-2 rounded'>
+      View Details
+    </Link>
 </div>})
  console.log(filtered_products) 
     return (

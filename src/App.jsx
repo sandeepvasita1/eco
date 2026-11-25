@@ -7,6 +7,7 @@ import Categories from './Categories'
 import { Route, Routes } from 'react-router-dom'
 import Products from './Products'
 import Menubar from './Menubar'
+import Productdetail from './Productdetail'
 
 function App() {
 return(<>
@@ -15,6 +16,7 @@ return(<>
 <Routes>
     <Route path="/" element={<Categories></Categories>}></Route>
     <Route path="/products/:category_name" element={<Products></Products>}></Route>
+    <Route path="/product/:id" element={<Productdetail></Productdetail>}></Route>
     
 </Routes>
 
