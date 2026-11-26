@@ -17,6 +17,8 @@ return(<>
     <Route path="/" element={<Categories></Categories>}></Route>
     <Route path="/products/:category_name" element={<Products></Products>}></Route>
     <Route path="/product/:id" element={<Productdetail></Productdetail>}></Route>
+    <Route path="/products/" element={<Products></Products>}></Route>
+    
     
 </Routes>
 

@@ -4,7 +4,15 @@ import { products } from './Data'
 import { Link } from 'react-router-dom'
 export default function Products() {
  let category_name = useParams().category_name
- let filtered_products = products.filter((p)=>p.category == category_name)
+// let filtered_products = products.filter((p)=>p.category == category_name)
+ let filtered_products;
+  
+  if(!category_name){
+    filtered_products=products
+  }
+  else{
+   filtered_products = products.filter((p) => p.category == category_name);
+  }
  let products_ui = filtered_products.map((product)=> {
 return <div className='flex flex-col gap-1 w-60 text-center align-middle content-center'>
     <img src={product.thumbnail} className='w-full aspect-square ' alt="" />
@@ -12,7 +20,7 @@ return <div className='flex flex-col gap-1 w-60 text-center align-middle content
    </div>
     <span>{Math.round(product.price - (product.price * product.discountPercentage /100))}.00</span>
      <Link to={`/product/${product.id}`}
-      className='bg-blue-600 text-white p-2 rounded'>
+      className='bg-blue-600 text-white p-2 gap-2 rounded'>
       View Details
     </Link>
 </div>})

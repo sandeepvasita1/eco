@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react'
-import galary from './Galary'
+
 
 export default function Gallery({ product }) {
 
