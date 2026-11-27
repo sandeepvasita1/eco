@@ -3,9 +3,7 @@ import React from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { products } from './Data'
 import Gallery from './Galary'
-import {useContext} from './Cantext/Card'
-
-
+import AddtoCart from './assets/AddtoCart'
 export default function ProductDetails() {
 
     let id = useParams().id
@@ -22,7 +20,7 @@ export default function ProductDetails() {
                     <Gallery product={product} />
 
                     <div className='md:w-1/2 flex flex-col gap-3'>
-                    <p className='bg-red-400 w-25 text-black p-2 rounded font-bold text-3xl'>
+                    <p className='bg-red-400 w-45 text-black p-2 rounded font-bold text-3xl'>
                              {product.category}
                         </p>
 
@@ -63,12 +61,9 @@ export default function ProductDetails() {
                         </Link>
                         <div className='flex gap-4 mt-4'>
 
-    <Link
-        to='/cart'
-        className='bg-white-500 hover:bg-yellow-600 text-black p-3 rounded text-center font-bold w-1/2'
-    >
-        Add to Cart
-    </Link>
+    <div className="flex flex-col sm:flex-row gap-3 mb-8">
+          <AddtoCart id={product.id}></AddtoCart>
+          </div>
 
     <Link
         to='/checkout'
