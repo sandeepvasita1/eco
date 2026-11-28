@@ -7,6 +7,7 @@ import Products from './Products'
 import Menubar from './Menubar'
 import Productdetail from './Productdetail'
 import { CartContext } from './assets/CartContext'
+import BuyNow from "./BuyNow";
 
 function App() {
 
@@ -26,6 +27,7 @@ function App() {
           <Route path="/product/:id" element={<Productdetail />} />
 
           <Route path="/products" element={<Products />} />
+          <Route path="/buynow" element={<BuyNow />} />
 
         </Routes>
 
